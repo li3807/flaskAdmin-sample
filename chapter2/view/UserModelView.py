@@ -2,7 +2,6 @@ from flask_admin.actions import action
 from flask_admin.contrib.peewee import ModelView
 
 from chapter2.view.ModelViewUtil import ModelViewUtil
-from chapter2.view.UserModelViewFilterConverter import UserModelViewFilterConverter
 
 
 class UserModelView(ModelView):

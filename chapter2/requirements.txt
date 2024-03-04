@@ -1,5 +1,6 @@
 Flask
 Flask-Admin
+Flask-Babel
 peewee
 wtf-peewee
 tablib[xlsx]

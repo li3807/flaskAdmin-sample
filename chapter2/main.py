@@ -11,7 +11,7 @@ app.config['SECRET_KEY'] = 's21sdf32sdf321dsf'
 
 admin = Admin(app, name='microblog', template_mode='bootstrap3')
 # Add administrative views here
-admin.add_view(UserModelView(UserModel))
+admin.add_view(UserModelView(name="用户", endpoint="user", model=UserModel))
 
 try:
     UserModel.create_table()

@@ -225,3 +225,28 @@ class UserModelView(ModelView):
         pass
 
 ```
+
+#### 菜单导航
+
+菜单导航依据 add_view 方法的视图参数来配置，示例代码
+
+```python
+from flask import Flask
+from flask_admin import Admin
+
+app = Flask(__name__)
+# 设置网站样式主题，可以在 https://bootswatch.com/3/ 查找
+app.config['FLASK_ADMIN_SWATCH'] = 'Paper'
+app.config['SECRET_KEY'] = 's21sdf32sdf321dsf'
+
+admin = Admin(app, name='microblog', template_mode='bootstrap3')
+
+admin.add_view(UserModelView(name="用户", endpoint="user", category="菜单分类", model=UserModel))
+```
+
+参数说明如下：
+
+- name：表示菜单项
+- model：表示模型对象
+- endpoint：表示 Url 端点
+- category：表示菜单分类，如果为空表示没有下级菜单。
